@@ -3,7 +3,7 @@ import { database as db } from "../index.js";
 
 const getRewardPoints = async (req, res) => {
     try {
-        const { customerName } = req.body;
+        const { customerName } = req.query;
         await db.read();
         db.data = db.data || { customers: [] };
 

@@ -1,15 +1,3 @@
 {
-  "customers": [
-    {
-      "name": "User",
-      "customerID": "GqQQ",
-      "transactions": [
-        {
-          "amount": 120.5,
-          "rewardPoints": "191.00",
-          "timestamp": 1673267401376
-        }
-      ]
-    }
-  ]
+  "customers": []
 }

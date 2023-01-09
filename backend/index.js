@@ -43,7 +43,7 @@ app.use(logger("tiny"));
 // APIs
 app.get("/api/customers", getCustomers);
 
-app.get("/api/customer/reward-points/", getRewardPoints);
+app.get("/api/customer/reward-points", getRewardPoints);
 
 app.post("/api/customer", addCustomer);
 

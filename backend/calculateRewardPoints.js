@@ -10,7 +10,7 @@ const calculateRewardPoints = (amount) => {
     if (amount >= TOP_THRESHOLD) {
         points += TOP_MULTIPLIER * ((amount - TOP_THRESHOLD) % TOP_THRESHOLD);
     }
-    return points.toFixed(FIXED_DECIMAL_POSITIONS);
+    return Number(points.toFixed(FIXED_DECIMAL_POSITIONS));
 };
 
 export default calculateRewardPoints;
