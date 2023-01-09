@@ -1,14 +1,31 @@
 import bodyParser from "body-parser";
 import express from "express";
 import logger from "morgan";
+
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import addCustomer from "./controllers/addCustomer.js";
 import addTransaction from "./controllers/addTransaction.js";
 import getCustomers from "./controllers/getCustomers.js";
 import getRewardPoints from "./controllers/getRewardPoints.js";
 
+import { Low } from "lowdb";
+import { JSONFile } from "lowdb/node";
+
+// setting up low db configuration
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const file = join(__dirname, "db.json");
+
+// Configure lowdb to write to JSONFile
+const adapter = new JSONFile(file);
+
+export const database = new Low(adapter);
+
+// Setting up express server
 const app = express();
 const PORT = 3080;
 
+// apply middlewares
 // parsers
 app.use(bodyParser.urlencoded({
     extended: true
