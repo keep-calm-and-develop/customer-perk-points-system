@@ -40,3 +40,7 @@
     opacity: 0.6;
     cursor: auto;
 }
+
+.successful-transaction-message span {
+    color: var(--primary-color);
+}
