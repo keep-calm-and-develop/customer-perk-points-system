@@ -38,11 +38,11 @@ app.use(logger("tiny"));
 // APIs
 app.get("/api/customers", getCustomers);
 
-app.get("/api/customer/:customerID/reward-points/", getRewardPoints);
+app.get("/api/customer/reward-points/", getRewardPoints);
 
 app.post("/api/customer", addCustomer);
 
-app.post("/api/customer/:customerID/transaction", addTransaction);
+app.post("/api/customer/transaction", addTransaction);
 
 // error handling
 // assume 404 since no middleware responded

@@ -1,10 +1,43 @@
+import calculateRewardPoints from "../calculateRewardPoints.js";
+import { API_RESPONSE_CODES } from "../constants.js";
+import { database as db } from "../index.js";
 
-const addTransaction = (req, res) => {
-    // const { customerID } = req.params;
-    // Customer not found
-    // res.status(400).send(`Customer ${customerID} Not found`);
-    console.log(req.body);
-    res.end("Add Transaction");
+const addTransaction = async (req, res) => {
+    try {
+        const { customerName } = req.body;
+
+        await db.read();
+        db.data = db.data || { customers: [] };
+
+        const customer = db.data.customers.find((customer) => customer.name === customerName);
+        if (!customer) {
+            res.status(API_RESPONSE_CODES.INVALID_REQUEST).send({ message: `Customer ${customerName} Not found` });
+            return;
+        }
+
+        const { amount } = req.body;
+        if (typeof amount !== "number") {
+            res.status(API_RESPONSE_CODES.INVALID_REQUEST).send({ message: "Amount must be number" });
+            return;
+        }
+        if (isNaN(amount)) {
+            res.status(API_RESPONSE_CODES.INVALID_REQUEST).send({ message: "Amount should not be not a number (NaN)" });
+            return;
+        }
+
+        const rewardPoints = calculateRewardPoints(amount.toFixed(2));
+
+        customer.transactions.push({
+            amount,
+            rewardPoints,
+            timestamp: new Date().getTime(),
+        });
+
+        res.status(API_RESPONSE_CODES.SUCCESS).send({ message: "Transaction Added Successfully", rewardPoints });
+    } catch (error) {
+        res.status(API_RESPONSE_CODES.SERVER_ERROR).send({ message: "Internal server error" });
+        console.log(error);
+    }
 };
 
 export default addTransaction;

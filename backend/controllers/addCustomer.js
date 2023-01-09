@@ -1,4 +1,5 @@
 import { nanoid } from "nanoid";
+import { API_RESPONSE_CODES, NANO_ID_SIZE } from "../constants.js";
 import { database as db } from "../index.js";
 
 const addCustomer = async (req, res) => {
@@ -8,17 +9,17 @@ const addCustomer = async (req, res) => {
         db.data = db.data || { customers: [] };
 
         if (db.data.customers.find((customer) => customer.name === name)) {
-            res.status(400).send({ message: `Customer already exists with the name ${name}` });
+            res.status(API_RESPONSE_CODES.INVALID_REQUEST).send({ message: `Customer already exists with the name ${name}` });
             return;
         }
 
-        const customerID = nanoid(4);
+        const customerID = nanoid(NANO_ID_SIZE);
         db.data.customers.push({ name, customerID, transactions: [] });
         await db.write();
 
-        res.status(200).send({ customerID });
+        res.status(API_RESPONSE_CODES.SUCCESS).send({ customerID });
     } catch (error) {
-        res.status(500).send({ message: "Internal server error" });
+        res.status(API_RESPONSE_CODES.SERVER_ERROR).send({ message: "Internal server error" });
         console.log(error);
     }
 };
