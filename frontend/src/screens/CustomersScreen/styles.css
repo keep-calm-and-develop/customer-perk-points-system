@@ -16,11 +16,16 @@
     padding: 8px 12px;
 }
 
-
 .customers-list__item__add-transaction {
     display: inline-block;
     font-size: 16px;
     text-decoration: none;
     color: lightcoral;
     font-weight: bold;
+}
+
+.no-customers-message {
+    opacity: 0.7;
+    color: gray;
+    text-align: center;   
 }

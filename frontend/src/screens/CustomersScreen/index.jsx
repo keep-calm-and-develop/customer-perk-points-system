@@ -12,7 +12,9 @@ const CustomersScreen = () => {
                 ? 'Fetching customers...'
                 : <div className="customers-list">
                 {
-                    customers.map(({ name, customerID }) => (
+                    customers.length === 0
+                    ? <h3 className="no-customers-message">0 Customers</h3>
+                    : customers.map(({ name, customerID }) => (
                         <CustomerItem key={customerID} name={name} customerID={customerID} />
                     ))
                 }

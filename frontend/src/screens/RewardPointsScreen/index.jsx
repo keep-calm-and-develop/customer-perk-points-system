@@ -13,14 +13,14 @@ const RewardPointsScreen = () => {
                 <div className="get-reward-points__input-container">
                     <label htmlFor="customerName">Customer Name</label>
                     <input value={customerName} name="customerName" onChange={onCustomerNameChange} placeholder="Enter name here" />
-                    {errorMessage && <div className="error-message">{errorMessage}</div>}
                 </div>
+                {errorMessage && <div className="error-message">{errorMessage}</div>}
                 <button type="submit" disabled={!customerName || isSubmitting}>{isSubmitting ? 'Fetching...' : 'Get Points'}</button>
             </form>
             {
                 (rewardPoints && !isSubmitting)
                 &&
-                <h2 className="reward-points"><span>{rewardPoints}</span> 💎</h2>
+                <h2 className="reward-points"><span>{rewardPoints}</span> 💎 reward points</h2>
             }
         </div>
     );
