@@ -20,7 +20,7 @@ const NewCustomerScreen = () => {
         {
             (customerID && !isSubmitting)
             &&
-            <h3 className="customer-id">Customer created with ID <span>{customerID}</span>. Use this ID <a>to add transaction</a> 💰 and <Link to={'/get-reward-points'}>to get reward points</Link> 💎</h3>
+            <h3 className="customer-id">Customer created with ID <span>{customerID}</span>. Use this ID <Link to={`/${customerID}/new-transaction`}>to add transaction</Link> 💰 and <Link to={'/get-reward-points'}>to get reward points</Link> 💎</h3>
         }
     </div>
     );
