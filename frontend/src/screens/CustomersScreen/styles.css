@@ -1,0 +1,30 @@
+.customers-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 12px;
+
+    padding: 8px;
+    width: 420px;
+}
+
+.customers-list__item {
+    display: grid;
+    grid-template-columns: 100px 1fr 130px;
+    font-size: 20px;
+    padding: 8px 12px;
+}
+
+.list__item__customerID__hash {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.customers-list__item__add-transaction {
+    display: inline-block;
+    font-size: 16px;
+    text-decoration: none;
+    color: lightcoral;
+    font-weight: bold;
+}

@@ -20,7 +20,7 @@ const RewardPointsScreen = () => {
             {
                 (rewardPoints && !isSubmitting)
                 &&
-                <h2 className="reward-points"><span>{rewardPoints}</span> Reward Points 💎</h2>
+                <h2 className="reward-points"><span>{rewardPoints}</span> 💎</h2>
             }
         </div>
     );
