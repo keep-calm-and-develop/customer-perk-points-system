@@ -13,14 +13,14 @@ const NewCustomerScreen = () => {
             <div className="add-new-customer__input-container">
                 <label htmlFor="name">Customer Name</label>
                 <input value={name} name="name" onChange={onNameChange} placeholder="Enter full name" />
-                {errorMessage && <div className="error-message">{errorMessage}</div>}
             </div>
+            {errorMessage && <div className="error-message">{errorMessage}</div>}
             <button type="submit" disabled={!name || isSubmitting}>{isSubmitting ? 'Creating...' : 'Add Customer'}</button>
         </form>
         {
             (customerID && !isSubmitting)
             &&
-            <h3 className="customer-id">Customer created with ID <span>{customerID}</span>. Use this ID <Link to={`/${customerID}/new-transaction`}>to add transaction</Link> 💰 and <Link to={'/get-reward-points'}>to get reward points</Link> 💎</h3>
+            <h3 className="customer-id">Customer created successfully, Visit to <Link to={`/${customerID}/new-transaction?name=${name}`}>add purchase</Link> 💰 and <Link to={'/get-reward-points'}>know reward points</Link> 💎</h3>
         }
     </div>
     );

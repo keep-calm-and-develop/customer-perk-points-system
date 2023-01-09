@@ -1,4 +1,6 @@
+import axios from "axios";
 import { useCallback, useState } from "react";
+import { API_SERVICES } from "../../constants";
 
 export const useAddNewCustomer = (name) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -8,16 +10,17 @@ export const useAddNewCustomer = (name) => {
     const onSubmit = useCallback(async (event) => {
         setErrorMessage('');
         setIsSubmitting(true);
+        setCustomerID(null);
         event.preventDefault();
         event.stopPropagation();
         try {
-            setTimeout(() => {
-                setIsSubmitting(false);
-                setCustomerID(1241);
-            }, 1000);
+            const { data } = await axios.post(API_SERVICES.ADD_CUSTOMER, { name });
+            setCustomerID(data.customerID);
         } catch (error) {
             console.error(error);
-            setErrorMessage(error.toString());
+            setErrorMessage(error?.response?.data?.message ?? error.toString());
+        } finally {
+            setIsSubmitting(false);
         }
     }, [name]);
 
