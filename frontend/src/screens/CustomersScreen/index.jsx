@@ -1,8 +1,9 @@
+import React from "react";
 import CustomerItem from "./CustomerItem";
 import "./styles.css";
-import { useGetCustomers } from "./useGetCustomers";
+import useGetCustomers from "./useGetCustomers";
 
-const CustomersScreen = () => {
+function CustomersScreen() {
     const { customers, loading } = useGetCustomers();
     return (
         <div className="page-container">
@@ -22,6 +23,6 @@ const CustomersScreen = () => {
             }
         </div>
     );
-};
+}
 
 export default CustomersScreen;

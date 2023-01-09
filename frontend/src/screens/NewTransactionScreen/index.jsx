@@ -1,10 +1,11 @@
-import { useMemo } from "react";
+import { React, useMemo } from "react";
 import { useLocation, useParams } from "react-router-dom";
+import blockInvalidChar from "./blockInvalidChar";
 import "./styles.css";
 import useAddTransaction from "./useAddTransaction";
 import useAmountState from "./useAmountState";
 
-const NewTransactionScreen = () => {
+function NewTransactionScreen() {
     const { customerID } = useParams();
     const { search } = useLocation();
     const searchParams = useMemo(() => new URLSearchParams(search), [search]);
@@ -19,7 +20,7 @@ const NewTransactionScreen = () => {
                 <div className="add-new-transaction__input-container">
                     <label htmlFor="amount">Purchase</label>
                     <input
-                        type={'number'}
+                        type="number"
                         value={amount}
                         name="amount"
                         onChange={onAmountChange}
@@ -37,8 +38,6 @@ const NewTransactionScreen = () => {
             }
         </div>
     );
-};
-
-const blockInvalidChar = e => ['e', 'E', '+', '-'].includes(e.key) && e.preventDefault();
+}
 
 export default NewTransactionScreen;

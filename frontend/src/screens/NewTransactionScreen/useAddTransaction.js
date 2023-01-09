@@ -20,7 +20,6 @@ const useAddTransaction = ({ customerID, amount }) => {
             });
             setRewardPoints(Number(data.rewardPoints));
         } catch (error) {
-            console.error(error);
             setErrorMessage(error?.response?.data?.message ?? error.toString());
         } finally {
             setIsSubmitting(false);

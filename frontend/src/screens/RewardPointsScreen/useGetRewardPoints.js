@@ -2,7 +2,7 @@ import axios from "axios";
 import { useCallback, useState } from "react";
 import { API_SERVICES } from "../../constants";
 
-export const useGetRewardPoints = (customerName) => {
+const useGetRewardPoints = (customerName) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const [rewardPoints, setRewardPoints] = useState(null);
@@ -21,7 +21,6 @@ export const useGetRewardPoints = (customerName) => {
             });
             setRewardPoints(data.points);
         } catch (error) {
-            console.error(error);
             setErrorMessage(error?.response?.data?.message ?? error.toString());
         } finally {
             setIsSubmitting(false);
@@ -30,3 +29,5 @@ export const useGetRewardPoints = (customerName) => {
 
     return [{ isSubmitting, errorMessage, rewardPoints }, onSubmit];
 };
+
+export default useGetRewardPoints;

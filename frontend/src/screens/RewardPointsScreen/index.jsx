@@ -1,8 +1,9 @@
+import React from "react";
 import "./styles.css";
-import { useCustomerNameState } from "./useCustomerNameState";
-import { useGetRewardPoints } from "./useGetRewardPoints";
+import useCustomerNameState from "./useCustomerNameState";
+import useGetRewardPoints from "./useGetRewardPoints";
 
-const RewardPointsScreen = () => {
+function RewardPointsScreen() {
     const [customerName, onCustomerNameChange] = useCustomerNameState();
     const [{ isSubmitting, errorMessage, rewardPoints }, onSubmit] = useGetRewardPoints(customerName);
     
@@ -24,6 +25,6 @@ const RewardPointsScreen = () => {
             }
         </div>
     );
-};
+}
 
 export default RewardPointsScreen;

@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { API_SERVICES } from "../../constants";
 
-export const useGetCustomers = () => {
+const useGetCustomers = () => {
     const [customers, setCustomers] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -12,6 +12,7 @@ export const useGetCustomers = () => {
                 const { data } = await axios.get(`${API_SERVICES.GET_CUSTOMERS}`);
                 setCustomers(data.customers);
             } catch (error) {
+                // eslint-disable-next-line no-console
                 console.error(error);
             } finally {
                 setLoading(false);
@@ -24,3 +25,5 @@ export const useGetCustomers = () => {
         loading,
     };
 };
+
+export default useGetCustomers;

@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 
-export const useCustomerNameState = () => {
+const useCustomerNameState = () => {
     const [name, setName] = useState('');
 
     const onNameChange = useCallback((event) => {
@@ -9,3 +9,5 @@ export const useCustomerNameState = () => {
 
     return [name, onNameChange];
 };
+
+export default useCustomerNameState;

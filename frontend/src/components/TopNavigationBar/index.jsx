@@ -17,7 +17,7 @@ const PAGES = [
     },
 ];
 
-const TopNavigationBar = () => {
+function TopNavigationBar() {
     const navigate = useNavigate();
 
     const onNavigationClick = (e, to) => {
@@ -27,14 +27,14 @@ const TopNavigationBar = () => {
     };
     return (
         <div className="top-navigation">
-            <Link to={'/'} className="top-navigation__title">Reward Points System</Link>
+            <Link to="/" className="top-navigation__title">Reward Points System</Link>
             {
                 PAGES.map(({ title, route }) => (
-                    <button key={route} onClick={e => onNavigationClick(e, route)}>{title}</button>
+                    <button type="button" key={route} onClick={e => onNavigationClick(e, route)}>{title}</button>
                 ))
             }
         </div>
     );
-};
+}
 
 export default TopNavigationBar;

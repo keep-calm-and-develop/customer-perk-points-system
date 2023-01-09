@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 
 import {
@@ -15,7 +16,7 @@ function App() {
       <div className="">
         <TopNavigationBar />
         <Routes>
-          <Route path="/" element={<Navigate to={"/get-reward-points"} replace />} />
+          <Route path="/" element={<Navigate to="/get-reward-points" replace />} />
           <Route path="/get-reward-points" element={<RewardPointsScreen />} />
           <Route path="/customers" element={<CustomersScreen />} />
           <Route path="/new-customer" element={<NewCustomerScreen />} />

@@ -1,3 +1,15 @@
 {
-  "customers": []
+  "customers": [
+    {
+      "name": "Aniket",
+      "customerID": "SDc9",
+      "transactions": [
+        {
+          "amount": 120,
+          "rewardPoints": 90,
+          "timestamp": 1673272651734
+        }
+      ]
+    }
+  ]
 }

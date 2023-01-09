@@ -14,6 +14,10 @@
     gap: 12px;
 }
 
+.get-reward-points__input-container label {
+    width: max-content;
+}
+
 .get-reward-points__page-content button {
     border: none;
     border-radius: 5px;
