@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 
-export const useGetRewardPoints = (customerID) => {
+export const useGetRewardPoints = (customerName) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const [rewardPoints, setRewardPoints] = useState(null);
@@ -19,7 +19,7 @@ export const useGetRewardPoints = (customerID) => {
             console.error(error);
             setErrorMessage(error.toString());
         }
-    }, [customerID]);
+    }, [customerName]);
 
     return [{ isSubmitting, errorMessage, rewardPoints }, onSubmit];
 };

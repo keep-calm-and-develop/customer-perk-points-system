@@ -1,21 +1,21 @@
 import "./styles.css";
-import { useCustomerIDState } from "./useCustomerIDState";
+import { useCustomerNameState } from "./useCustomerNameState";
 import { useGetRewardPoints } from "./useGetRewardPoints";
 
 const RewardPointsScreen = () => {
-    const [customerID, onCustomerIDChange] = useCustomerIDState();
-    const [{ isSubmitting, errorMessage, rewardPoints }, onSubmit] = useGetRewardPoints(customerID);
+    const [customerName, onCustomerNameChange] = useCustomerNameState();
+    const [{ isSubmitting, errorMessage, rewardPoints }, onSubmit] = useGetRewardPoints(customerName);
     
     return (
         <div className="page-container get-reward-points">
             <h1>Get Reward Points</h1>
             <form className="get-reward-points__page-content" onSubmit={onSubmit}>
                 <div className="get-reward-points__input-container">
-                    <label htmlFor="customerID">Customer ID</label>
-                    <input value={customerID} name="customerID" onChange={onCustomerIDChange} placeholder="Enter ID here" />
+                    <label htmlFor="customerName">Customer Name</label>
+                    <input value={customerName} name="customerName" onChange={onCustomerNameChange} placeholder="Enter name here" />
                     {errorMessage && <div className="error-message">{errorMessage}</div>}
                 </div>
-                <button type="submit" disabled={!customerID || isSubmitting}>{isSubmitting ? 'Fetching...' : 'Get Points'}</button>
+                <button type="submit" disabled={!customerName || isSubmitting}>{isSubmitting ? 'Fetching...' : 'Get Points'}</button>
             </form>
             {
                 (rewardPoints && !isSubmitting)
