@@ -4,12 +4,12 @@ import { database as db } from "../index.js";
 
 const addTransaction = async (req, res) => {
     try {
-        const { customerName } = req.body;
+        const { customerName, customerID } = req.body;
 
         await db.read();
         db.data = db.data || { customers: [] };
 
-        const customer = db.data.customers.find((customer) => customer.name === customerName);
+        const customer = db.data.customers.find((customer) => (customer.name === customerName || customer.customerID === customerID));
         if (!customer) {
             res.status(API_RESPONSE_CODES.INVALID_REQUEST).send({ message: `Customer ${customerName} Not found` });
             return;
