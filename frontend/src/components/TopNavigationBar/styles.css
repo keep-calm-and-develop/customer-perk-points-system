@@ -28,4 +28,5 @@
     font-weight: bold;
     font-size: 28px;
     color: var(--primary-color);
+    text-decoration: none;
 }

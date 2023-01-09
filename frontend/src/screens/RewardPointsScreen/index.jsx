@@ -18,9 +18,9 @@ const RewardPointsScreen = () => {
                 <button type="submit" disabled={!customerID || isSubmitting}>{isSubmitting ? 'Fetching...' : 'Get Points'}</button>
             </form>
             {
-                rewardPoints
+                (rewardPoints && !isSubmitting)
                 &&
-                <h2 className="reward-points">🎉 <span>{rewardPoints}</span> Reward Points 🎉</h2>
+                <h2 className="reward-points"><span>{rewardPoints}</span> Reward Points 💎</h2>
             }
         </div>
     );

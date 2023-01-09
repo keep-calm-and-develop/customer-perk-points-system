@@ -1,11 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./styles.css";
 
 const PAGES = [
     {
         title: 'Reward Points',
-        route: '/getRewardPoints',
+        route: '/get-reward-points',
     },
     {
         title: 'All Customers',
@@ -27,7 +27,7 @@ const TopNavigationBar = () => {
     };
     return (
         <div className="top-navigation">
-            <span className="top-navigation__title">Reward Points System</span>
+            <Link to={'/'} className="top-navigation__title">Reward Points System</Link>
             {
                 PAGES.map(({ title, route }) => (
                     <button key={route} onClick={e => onNavigationClick(e, route)}>{title}</button>
