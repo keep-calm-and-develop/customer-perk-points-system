@@ -16,6 +16,11 @@
     padding: 8px 12px;
 }
 
+.list__item__customerID__hash {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
 .customers-list__item__add-transaction {
     display: inline-block;
     font-size: 16px;
