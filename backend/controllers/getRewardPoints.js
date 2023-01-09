@@ -14,7 +14,7 @@ const getRewardPoints = async (req, res) => {
         }
 
         let allowedDate = new Date();
-        allowedDate.setDate(allowedDate - POINTS_EXPIRY_DAYS);
+        allowedDate.setDate(allowedDate.getDate() - POINTS_EXPIRY_DAYS);
         const allowedTimeStamp = allowedDate.getTime();
         const transactions = customer.transactions.filter(({ timestamp }) => {
             return timestamp >= allowedTimeStamp;

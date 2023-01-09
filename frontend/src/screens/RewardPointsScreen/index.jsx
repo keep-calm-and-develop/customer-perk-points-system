@@ -21,7 +21,7 @@ function RewardPointsScreen() {
             {
                 (rewardPoints && !isSubmitting)
                 &&
-                <h2 className="reward-points"><span>{rewardPoints}</span> 💎 reward points</h2>
+                <h2 className="reward-points"><span>{Number(rewardPoints)}</span> 💎 reward points</h2>
             }
         </div>
     );
