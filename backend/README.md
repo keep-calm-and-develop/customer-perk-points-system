@@ -21,11 +21,11 @@ npm start
 ## API
 Test APIs using Postman
 
-#### `Get All Customers`
+#### Get All Customers
 URL: `http://localhost:3080/api/customers`
 METHOD: GET
 
-#### `Get Customer's Total Rewards Points over 90 days`
+#### Get Customer's Total Rewards Points over 90 days
 URL: `http://localhost:3080/api/customer/reward-points`
 METHOD: GET
 REQUEST BODY: 
@@ -35,7 +35,7 @@ REQUEST BODY:
 }
 ```
 
-#### `Add Purchase Transaction`
+#### Add Purchase Transaction
 URL: `http://localhost:3080/api/customer/transaction/`
 METHOD: POST
 REQUEST BODY: 
@@ -46,7 +46,7 @@ REQUEST BODY:
 }
 ```
 
-#### `Add Customer`
+#### Add Customer
 URL: `http://localhost:3080/api/customer/`
 METHOD: POST
 REQUEST BODY: 
