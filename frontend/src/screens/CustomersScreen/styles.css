@@ -11,15 +11,11 @@
 
 .customers-list__item {
     display: grid;
-    grid-template-columns: 100px 1fr 130px;
+    grid-template-columns: 1fr 140px;
     font-size: 20px;
     padding: 8px 12px;
 }
 
-.list__item__customerID__hash {
-    color: var(--primary-color);
-    font-weight: bold;
-}
 
 .customers-list__item__add-transaction {
     display: inline-block;
