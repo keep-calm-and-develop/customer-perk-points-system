@@ -13,7 +13,7 @@ function RewardPointsScreen() {
             <form className="get-reward-points__page-content" onSubmit={onSubmit}>
                 <div className="get-reward-points__input-container">
                     <label htmlFor="customerName">Customer Name</label>
-                    <input value={customerName} name="customerName" onChange={onCustomerNameChange} placeholder="Enter name here" />
+                    <input value={customerName} name="customerName" onChange={onCustomerNameChange} placeholder="Enter Full Name" />
                 </div>
                 {errorMessage && <div className="error-message">{errorMessage}</div>}
                 <button type="submit" disabled={!customerName || isSubmitting}>{isSubmitting ? 'Fetching...' : 'Get Points'}</button>
