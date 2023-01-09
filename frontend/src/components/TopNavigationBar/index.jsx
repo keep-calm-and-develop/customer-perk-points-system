@@ -4,10 +4,6 @@ import "./styles.css";
 
 const PAGES = [
     {
-        title: 'Reward Points',
-        route: '/get-reward-points',
-    },
-    {
         title: 'All Customers',
         route: '/customers',
     },

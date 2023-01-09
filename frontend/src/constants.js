@@ -8,7 +8,10 @@ const API_SERVICES = {
     ADD_TRANSACTION: `${API_SERVER_URL}/customer/transaction/`,
 };
 
+const MONTHS = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+
 export {
     API_SERVER_URL,
     API_SERVICES,
+    MONTHS,
 };

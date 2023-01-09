@@ -1,3 +1,4 @@
+import { formatISO } from "date-fns";
 import calculateRewardPoints from "../calculateRewardPoints.js";
 import { API_RESPONSE_CODES, FIXED_DECIMAL_POSITIONS } from "../constants.js";
 import { database as db } from "../index.js";
@@ -30,7 +31,7 @@ const addTransaction = async (req, res) => {
         customer.transactions.push({
             amount,
             rewardPoints,
-            timestamp: new Date().getTime(),
+            timestamp: formatISO(new Date()),
         });
 
         await db.write();

@@ -8,7 +8,6 @@ import { fileURLToPath } from "node:url";
 import addCustomer from "./controllers/addCustomer.js";
 import addTransaction from "./controllers/addTransaction.js";
 import getCustomers from "./controllers/getCustomers.js";
-import getRewardPoints from "./controllers/getRewardPoints.js";
 
 import { Low } from "lowdb";
 import { JSONFile } from "lowdb/node";
@@ -42,8 +41,6 @@ app.use(logger("tiny"));
 
 // APIs
 app.get("/api/customers", getCustomers);
-
-app.get("/api/customer/reward-points", getRewardPoints);
 
 app.post("/api/customer", addCustomer);
 

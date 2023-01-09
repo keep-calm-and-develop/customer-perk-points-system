@@ -13,9 +13,13 @@ const API_RESPONSE_CODES = {
 
 const NANO_ID_SIZE = 4;
 
-const POINTS_EXPIRY_DAYS = 90;
-
 const FIXED_DECIMAL_POSITIONS = 2;
+
+const MONTHS = [
+    0,
+    1,
+    2,
+];
 
 export {
     BASE_THRESHOLD,
@@ -24,6 +28,6 @@ export {
     TOP_MULTIPLIER,
     API_RESPONSE_CODES,
     NANO_ID_SIZE,
-    POINTS_EXPIRY_DAYS,
     FIXED_DECIMAL_POSITIONS,
+    MONTHS,
 };

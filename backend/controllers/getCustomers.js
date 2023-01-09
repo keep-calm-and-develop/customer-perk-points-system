@@ -1,4 +1,5 @@
 import { API_RESPONSE_CODES } from "../constants.js";
+import getRewardPoints from "../getRewardPoints.js";
 import { database as db } from "../index.js";
 
 const getCustomers = async (req, res) => {
@@ -11,7 +12,14 @@ const getCustomers = async (req, res) => {
         db.data = db.data || { customers: [] };
 
         await db.write();
-        res.status(API_RESPONSE_CODES.SUCCESS).send(db.data);
+
+        const customers = db.data.customers.map((customer) => {
+            const { totalPoints, monthlyPoints } = getRewardPoints(customer);
+            const { name, customerID } = customer;
+            return { name, customerID, totalPoints, monthlyPoints };
+        });
+
+        res.status(API_RESPONSE_CODES.SUCCESS).send({ customers });
     } catch (error) {
         res.status(API_RESPONSE_CODES.SERVER_ERROR).send({ message: "Internal server error" });
         console.log(error);
