@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+
+import {
+  BrowserRouter, Navigate, Route, Routes
+} from "react-router-dom";
+import TopNavigationBar from './components/TopNavigationBar';
+import CustomersScreen from './screens/CustomersScreen';
+import NewCustomerScreen from './screens/NewCustomerScreen';
+import NewTransactionScreen from './screens/NewTransactionScreen';
+import RewardPointsScreen from './screens/RewardPointsScreen';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="">
+        <TopNavigationBar />
+        <Routes>
+          <Route path="/" element={<Navigate to={"/getRewardPoints"} replace />} />
+          <Route path="/getRewardPoints" element={<RewardPointsScreen />} />
+          <Route path="/customers" element={<CustomersScreen />} />
+          <Route path="/new-customer" element={<NewCustomerScreen />} />
+          <Route path="/:customerID/new-transaction" element={<NewTransactionScreen />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
