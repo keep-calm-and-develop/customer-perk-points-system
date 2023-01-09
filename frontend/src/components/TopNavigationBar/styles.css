@@ -11,8 +11,8 @@
     outline: none;
     
     background-color: transparent;
-    padding: 16px 20px;
-    font-size: 20px;
+    padding: 20px;
+    font-size: 18px;
 
     cursor: pointer;
 }
@@ -26,6 +26,6 @@
     padding: 0px 20px;
 
     font-weight: bold;
-    font-size: 22px;
-    color: rgba(0, 0, 0, 0.3)
+    font-size: 28px;
+    color: var(--primary-color);
 }

@@ -30,7 +30,7 @@ const TopNavigationBar = () => {
             <span className="top-navigation__title">Reward Points System</span>
             {
                 PAGES.map(({ title, route }) => (
-                    <button onClick={e => onNavigationClick(e, route)}>{title}</button>
+                    <button key={route} onClick={e => onNavigationClick(e, route)}>{title}</button>
                 ))
             }
         </div>
