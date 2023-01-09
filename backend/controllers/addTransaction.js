@@ -1,5 +1,5 @@
 import calculateRewardPoints from "../calculateRewardPoints.js";
-import { API_RESPONSE_CODES } from "../constants.js";
+import { API_RESPONSE_CODES, FIXED_DECIMAL_POSITIONS } from "../constants.js";
 import { database as db } from "../index.js";
 
 const addTransaction = async (req, res) => {
@@ -25,7 +25,7 @@ const addTransaction = async (req, res) => {
             return;
         }
 
-        const rewardPoints = calculateRewardPoints(amount.toFixed(2));
+        const rewardPoints = calculateRewardPoints(amount.toFixed(FIXED_DECIMAL_POSITIONS));
 
         customer.transactions.push({
             amount,
@@ -33,6 +33,7 @@ const addTransaction = async (req, res) => {
             timestamp: new Date().getTime(),
         });
 
+        await db.write();
         res.status(API_RESPONSE_CODES.SUCCESS).send({ message: "Transaction Added Successfully", rewardPoints });
     } catch (error) {
         res.status(API_RESPONSE_CODES.SERVER_ERROR).send({ message: "Internal server error" });

@@ -1,4 +1,4 @@
-import { BASE_MULTIPLIER, BASE_THRESHOLD, TOP_MULTIPLIER, TOP_THRESHOLD } from "./constants.js";
+import { BASE_MULTIPLIER, BASE_THRESHOLD, FIXED_DECIMAL_POSITIONS, TOP_MULTIPLIER, TOP_THRESHOLD } from "./constants.js";
 
 
 const calculateRewardPoints = (amount) => {
@@ -10,7 +10,7 @@ const calculateRewardPoints = (amount) => {
     if (amount >= TOP_THRESHOLD) {
         points += TOP_MULTIPLIER * ((amount - BASE_THRESHOLD) % TOP_THRESHOLD);
     }
-    return points.toFixed(2);
+    return points.toFixed(FIXED_DECIMAL_POSITIONS);
 };
 
 export default calculateRewardPoints;
