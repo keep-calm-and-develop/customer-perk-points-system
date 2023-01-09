@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Backend server to handle API requests and data base connection for reward based system frontend application",
+  "description": "Backend server to handle API requests and database connection for reward based system frontend application",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,11 @@
   },
   "keywords": [
     "node",
-    "express"
+    "express",
+    "lowdb",
+    "morgan",
+    "body-parser",
+    "nanoid"
   ],
   "type": "module",
   "author": "",

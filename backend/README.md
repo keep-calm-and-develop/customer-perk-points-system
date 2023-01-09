@@ -1,0 +1,60 @@
+# Getting Started with Backend server
+Backend server to handle API requests and database connection for reward based system frontend application.
+
+## Pre-requisites
+Node version >= 14.20
+
+## Install
+Make sure you are in backend directory.
+
+```sh
+npm install
+```
+
+## Usage
+Start the server using
+
+```sh
+npm start
+```
+
+## API
+Test APIs using Postman
+
+#### `Get All Customers`
+URL: `http://localhost:3080/api/customers`
+METHOD: GET
+
+#### `Get Customer's Total Rewards Points over 90 days`
+URL: `http://localhost:3080/api/customer/reward-points`
+METHOD: GET
+REQUEST BODY: 
+```json
+{
+    "customerName": "User"
+}
+```
+
+#### `Add Purchase Transaction`
+URL: `http://localhost:3080/api/customer/transaction/`
+METHOD: POST
+REQUEST BODY: 
+```json
+{
+    "amount": 120.50,
+    "customerName": "User"
+}
+```
+
+#### `Add Customer`
+URL: `http://localhost:3080/api/customer/`
+METHOD: POST
+REQUEST BODY: 
+```json
+{
+    "name": "User"
+}
+```
+
+#### Test Data
+Directly modify db.json to create mock data for the tests.
