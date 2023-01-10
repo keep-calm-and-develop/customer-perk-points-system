@@ -32,7 +32,7 @@ function NewTransactionScreen() {
                 <button type="submit" disabled={!amount || isSubmitting}>{isSubmitting ? 'Saving...' : 'Save Transaction'}</button>
             </form>
             {
-                (rewardPoints && !isSubmitting)
+                (rewardPoints !== null && !isSubmitting)
                 &&
                 <h3 className="successful-transaction-message">Purchase Added Successfully ✅. Earned <span>{rewardPoints}</span> reward points 💎.</h3>
             }

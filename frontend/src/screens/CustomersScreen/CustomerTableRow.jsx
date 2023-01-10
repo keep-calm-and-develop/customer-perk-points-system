@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-function CustomerItem({ name, customerID, totalPoints, monthlyPoints }) {
+function CustomerTableRow({ name, customerID, totalPoints, monthlyPoints }) {
   return <tr className="customers-list__row">
         <td className="customers-list__cell-name">{name}</td>
         <td className="customers-list__cell-points">{totalPoints}</td>
@@ -17,11 +17,11 @@ function CustomerItem({ name, customerID, totalPoints, monthlyPoints }) {
     </tr>
 }
 
-CustomerItem.propTypes = {
+CustomerTableRow.propTypes = {
     name: PropTypes.string.isRequired,
     customerID: PropTypes.string.isRequired,
     totalPoints: PropTypes.number.isRequired,
     monthlyPoints: PropTypes.arrayOf(PropTypes.number).isRequired,
 }
 
-export default CustomerItem;
+export default CustomerTableRow;
