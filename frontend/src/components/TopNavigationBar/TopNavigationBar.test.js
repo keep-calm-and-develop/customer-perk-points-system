@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import TopNavigationBar from "./index";
 
 test('renders TopNavigationBar component', () => {
-    render(
+    const topNavigationBar = render(
         <BrowserRouter>
             <TopNavigationBar />
         </BrowserRouter>
@@ -13,4 +13,5 @@ test('renders TopNavigationBar component', () => {
     const newCustomersLink = screen.getByText(/new customer/i);
     expect(allCustomersLink).toBeInTheDocument();
     expect(newCustomersLink).toBeInTheDocument();
+    expect(topNavigationBar).toMatchSnapshot();
 });

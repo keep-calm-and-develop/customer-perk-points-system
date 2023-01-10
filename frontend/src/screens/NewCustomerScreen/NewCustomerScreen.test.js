@@ -4,11 +4,12 @@ import { BrowserRouter } from "react-router-dom";
 import NewCustomerScreen from "./index";
 
 test('renders NewCustomerScreen component', () => {
-    render(
+    const newCustomerScreen = render(
         <BrowserRouter>
             <NewCustomerScreen />
         </BrowserRouter>
     );
     const allCustomersText = screen.getByText(/new customer/i);
     expect(allCustomersText).toBeInTheDocument();
+    expect(newCustomerScreen).toMatchSnapshot();
 });
