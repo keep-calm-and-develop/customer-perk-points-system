@@ -1,6 +1,15 @@
 # Getting Started with Backend server
 Backend server to handle API requests and database connection for reward based system frontend application.
 
+## Technologies used
+- Node JS (Runtime)
+- Express JS (Server and API services)
+- LowDB (Database)
+- NodeMon (Server Monitoring)
+- Morgan (Logging)
+- Cors (Handle CORS)
+- Body Parser (URL encoding and JSON parsing)
+
 ## Pre-requisites
 Node version >= 14.20
 
@@ -21,19 +30,9 @@ npm start
 ## API
 Test APIs using Postman
 
-#### Get All Customers
+#### Get All Customers with reward point details
 URL: `http://localhost:3080/api/customers`
 METHOD: GET
-
-#### Get Customer's Total Rewards Points over 90 days
-URL: `http://localhost:3080/api/customer/reward-points`
-METHOD: GET
-REQUEST BODY: 
-```json
-{
-    "customerName": "User"
-}
-```
 
 #### Add Purchase Transaction
 URL: `http://localhost:3080/api/customer/transaction/`
