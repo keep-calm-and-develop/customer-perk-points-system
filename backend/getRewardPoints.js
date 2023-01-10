@@ -19,8 +19,8 @@ const getRewardPoints = (customer) => {
             }, 0);
     });
 
-    const totalPoints = customer.transactions.reduce((sum, txn) => {
-        return sum + Number(txn.rewardPoints);
+    const totalPoints = monthlyPoints.reduce((sum, points) => {
+        return sum + points;
     }, 0);
 
     return { totalPoints, monthlyPoints };
