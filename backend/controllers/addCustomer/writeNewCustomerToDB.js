@@ -6,7 +6,6 @@ const writeNewCustomerToDB = async ({ req, res }) => {
     const { name } = req.body;
     
     await db.read();
-    db.data = db.data || { customers: [] };
     const newCustomer = createCustomer({ name });
     db.data.customers.push(newCustomer);
     await db.write();

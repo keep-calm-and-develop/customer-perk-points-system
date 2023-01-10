@@ -11,15 +11,7 @@ import getCustomersController from "./controllers/getCustomers/index.js";
 
 import { Low } from "lowdb";
 import { JSONFile } from "lowdb/node";
-
-// setting up low db configuration
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const file = join(__dirname, "db.json");
-
-// Configure lowdb to write to JSONFile
-const adapter = new JSONFile(file);
-
-export const database = new Low(adapter);
+import initializeDatabase from "./initializeDatabase.js";
 
 // Setting up express server
 const app = express();
@@ -38,6 +30,18 @@ app.use(bodyParser.json());
 
 // logger
 app.use(logger("tiny"));
+
+// setting up low db configuration
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const file = join(__dirname, "db.json");
+
+// Configure lowdb to write to JSONFile
+const adapter = new JSONFile(file);
+
+export const database = new Low(adapter);
+
+// initialize empty database 
+app.use(initializeDatabase);
 
 // APIs
 app.get("/api/customers", getCustomersController);
