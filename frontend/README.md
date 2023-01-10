@@ -25,13 +25,20 @@ npm install
 ```
 
 ## Usage
-Start the server using
+Start the application
 
 ```sh
 npm start
 ```
 
 And enter `http://localhost:3000/` in the browser
+
+## Test
+To run unit tests
+
+```sh
+npm run test
+```
 
 ### Deployment
 
