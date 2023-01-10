@@ -1,6 +1,18 @@
 # Getting Started with Frontend application
 Frontend application to add customer and transactions, And to get customer's reward points based on purchases.
 
+## Technologies used
+- React
+- React Router V6 (Routing)
+- CSS3
+- HTML5
+- Axios (Rest API client)
+- Jest (Testing)
+- Date fns (Date manipulation)
+- Husky (Pre commit hook)
+- Lint staged (Apply ESLint rules for staged files)
+- Prop Types (Component's props validation)
+
 ## Pre-requisites
 - Node version >= 14.20.
 - Backend server is running successfully (check out ReadMe of backend directory).
