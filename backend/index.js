@@ -5,9 +5,9 @@ import logger from "morgan";
 
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import addCustomer from "./controllers/addCustomer.js";
-import addTransaction from "./controllers/addTransaction.js";
-import getCustomers from "./controllers/getCustomers.js";
+import addCustomerController from "./controllers/addCustomer/index.js";
+import addTransactionController from "./controllers/addTransaction/index.js";
+import getCustomersController from "./controllers/getCustomers/index.js";
 
 import { Low } from "lowdb";
 import { JSONFile } from "lowdb/node";
@@ -40,11 +40,11 @@ app.use(bodyParser.json());
 app.use(logger("tiny"));
 
 // APIs
-app.get("/api/customers", getCustomers);
+app.get("/api/customers", getCustomersController);
 
-app.post("/api/customer", addCustomer);
+app.post("/api/customer", addCustomerController);
 
-app.post("/api/customer/transaction", addTransaction);
+app.post("/api/customer/transaction", addTransactionController);
 
 // error handling
 // assume 404 since no middleware responded

@@ -15,12 +15,6 @@ const NANO_ID_SIZE = 4;
 
 const FIXED_DECIMAL_POSITIONS = 2;
 
-const MONTHS = [
-    0,
-    1,
-    2,
-];
-
 export {
     BASE_THRESHOLD,
     BASE_MULTIPLIER,
@@ -29,5 +23,4 @@ export {
     API_RESPONSE_CODES,
     NANO_ID_SIZE,
     FIXED_DECIMAL_POSITIONS,
-    MONTHS,
 };
