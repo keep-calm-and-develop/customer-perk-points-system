@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should match CustomerTableRow snapshot 1`] = `
+exports[`<CustomerTableRow /> Should match snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

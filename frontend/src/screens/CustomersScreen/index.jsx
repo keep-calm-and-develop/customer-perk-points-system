@@ -10,7 +10,7 @@ function CustomersScreen() {
             <h1>All Customers</h1>
             {
                 loading
-                ? 'Fetching customers...'
+                ? <div>Fetching customers...</div>
                 : <CustomersTable customers={customers} />
             }
         </div>

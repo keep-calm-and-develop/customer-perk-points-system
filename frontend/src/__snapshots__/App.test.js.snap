@@ -34,7 +34,9 @@ Object {
           <h1>
             All Customers
           </h1>
-          Fetching customers...
+          <div>
+            Fetching customers...
+          </div>
         </div>
       </div>
     </div>
@@ -69,7 +71,9 @@ Object {
         <h1>
           All Customers
         </h1>
-        Fetching customers...
+        <div>
+          Fetching customers...
+        </div>
       </div>
     </div>
   </div>,

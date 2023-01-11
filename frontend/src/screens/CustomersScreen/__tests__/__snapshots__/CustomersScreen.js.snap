@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should match CustomersScreen snapshot 1`] = `
+exports[`<CustomersScreen/> Should match snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -11,7 +11,9 @@ Object {
         <h1>
           All Customers
         </h1>
-        Fetching customers...
+        <div>
+          Fetching customers...
+        </div>
       </div>
     </div>
   </body>,
@@ -22,7 +24,9 @@ Object {
       <h1>
         All Customers
       </h1>
-      Fetching customers...
+      <div>
+        Fetching customers...
+      </div>
     </div>
   </div>,
   "debug": [Function],

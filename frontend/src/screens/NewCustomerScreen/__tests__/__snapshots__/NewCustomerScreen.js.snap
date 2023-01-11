@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders NewCustomerScreen component 1`] = `
+exports[`<NewCustomerScreen /> should match snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

@@ -8,7 +8,7 @@ export default function CustomersTable({ customers }) {
     return (
         customers.length === 0
             ? <h3 className="no-customers-message">0 Customers</h3>
-            : <table className="customers-table">
+            : <table data-testid="customers-table" className="customers-table">
                 <thead>
                     <tr>
                         <th>Name</th>

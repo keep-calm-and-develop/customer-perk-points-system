@@ -1,12 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should match CustomersTable snapshot 1`] = `
+exports[`<CustomersTable /> Should match snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <table
         class="customers-table"
+        data-testid="customers-table"
       >
         <thead>
           <tr>
@@ -128,6 +129,7 @@ Object {
   "container": <div>
     <table
       class="customers-table"
+      data-testid="customers-table"
     >
       <thead>
         <tr>
