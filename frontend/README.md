@@ -33,7 +33,7 @@ npm start
 
 And enter `http://localhost:3000/` in the browser
 
-## Test
+## Testing
 To run unit tests
 
 ```sh
