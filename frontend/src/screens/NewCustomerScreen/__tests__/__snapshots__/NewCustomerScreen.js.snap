@@ -23,12 +23,15 @@ Object {
               Customer Name
             </label>
             <input
+              data-testid="name-input"
+              id="name"
               name="name"
               placeholder="Enter Full Name"
               value=""
             />
           </div>
           <button
+            data-testid="submit-button"
             disabled=""
             type="submit"
           >
@@ -57,12 +60,15 @@ Object {
             Customer Name
           </label>
           <input
+            data-testid="name-input"
+            id="name"
             name="name"
             placeholder="Enter Full Name"
             value=""
           />
         </div>
         <button
+          data-testid="submit-button"
           disabled=""
           type="submit"
         >

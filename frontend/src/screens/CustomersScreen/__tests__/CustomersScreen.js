@@ -1,7 +1,9 @@
-import { render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import CustomersScreen from "..";
+
+afterEach(cleanup);
 
 describe('<CustomersScreen/>', () => {
     it('Should match snapshot', () => {

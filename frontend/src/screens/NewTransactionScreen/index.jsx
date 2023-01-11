@@ -26,10 +26,11 @@ function NewTransactionScreen() {
                         onChange={onAmountChange}
                         placeholder="Enter Amount Here"
                         onKeyDown={blockInvalidChar}
+                        data-testid="amount-input"
                     />
                 </div>
                 {errorMessage && <div className="error-message">{errorMessage}</div>}
-                <button type="submit" disabled={!amount || isSubmitting}>{isSubmitting ? 'Saving...' : 'Save Transaction'}</button>
+                <button type="submit" data-testid="submit-button" disabled={!amount || isSubmitting}>{isSubmitting ? 'Saving...' : 'Save Transaction'}</button>
             </form>
             {
                 (rewardPoints !== null && !isSubmitting)

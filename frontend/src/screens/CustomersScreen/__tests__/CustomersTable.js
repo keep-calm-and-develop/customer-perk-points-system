@@ -1,9 +1,11 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { BrowserRouter } from "react-router-dom";
 import { MOCK_CUSTOMERS } from "../../../constants";
 import CustomersTable from "../CustomersTable";
+
+afterEach(cleanup);
 
 describe('<CustomersTable />', () => {
     it('Should match snapshot', () => {

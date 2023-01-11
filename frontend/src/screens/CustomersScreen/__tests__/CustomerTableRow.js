@@ -1,8 +1,10 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { BrowserRouter } from "react-router-dom";
 import CustomerTableRow from "../CustomerTableRow";
+
+afterEach(cleanup);
 
 describe('<CustomerTableRow />', () => {
     it('Should match snapshot', () => {

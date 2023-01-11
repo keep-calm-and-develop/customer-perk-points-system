@@ -1,7 +1,9 @@
-import { render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import NewTransactionScreen from "../index";
+
+afterEach(cleanup);
 
 describe('<NewTransactionScreen />', () => {
     it('should render title new customer', () => {
@@ -20,5 +22,19 @@ describe('<NewTransactionScreen />', () => {
             </BrowserRouter>
         );
         expect(newTransactionScreen).toMatchSnapshot();
+    });
+    it('should update submit button state on input change', () => {
+        const { getByTestId } = render(
+            <BrowserRouter>
+                <NewTransactionScreen />
+            </BrowserRouter>
+        );
+
+        expect(getByTestId(/submit-button/)).toBeDisabled();
+        expect(getByTestId(/amount-input/).textContent).toBe("");
+
+        fireEvent.change(getByTestId(/amount-input/), {target: {value: 123 } } );
+
+        expect(getByTestId(/submit-button/)).toBeEnabled();
     });
 });
