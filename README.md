@@ -12,4 +12,4 @@ Reward points are calculated.
 node version >= 14.20.1
 
 ## Usage
-start the frontend and backend server using readMe from the respective directories
+start the frontend and [backend](https://github.com/keep-calm-and-develop/reward-points-system/tree/main/backend#readme) server using readMe from the respective directories
