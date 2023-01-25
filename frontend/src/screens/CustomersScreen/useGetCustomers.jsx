@@ -10,10 +10,9 @@ const useGetCustomers = () => {
         (async () => {
             try {
                 const { data } = await axios.get(`${API_SERVICES.GET_CUSTOMERS}`);
-                setCustomers(data.customers);
+                setCustomers(data.customers ?? []);
             } catch (error) {
-                // eslint-disable-next-line no-console
-                console.error(error);
+                throw new Error(error);
             } finally {
                 setLoading(false);
             }

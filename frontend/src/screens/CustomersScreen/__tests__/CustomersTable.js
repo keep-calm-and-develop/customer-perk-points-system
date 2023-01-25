@@ -2,7 +2,7 @@ import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { BrowserRouter } from "react-router-dom";
-import { MOCK_CUSTOMERS } from "../../../constants";
+import { MOCK_CUSTOMERS } from "../../../mockData";
 import CustomersTable from "../CustomersTable";
 
 afterEach(cleanup);
