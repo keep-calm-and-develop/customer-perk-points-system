@@ -13,6 +13,7 @@ Object {
         </h1>
         <form
           class="add-new-customer__page-content"
+          data-testid="add-new-customer-form"
         >
           <div
             class="add-new-customer__input-container"
@@ -50,6 +51,7 @@ Object {
       </h1>
       <form
         class="add-new-customer__page-content"
+        data-testid="add-new-customer-form"
       >
         <div
           class="add-new-customer__input-container"
