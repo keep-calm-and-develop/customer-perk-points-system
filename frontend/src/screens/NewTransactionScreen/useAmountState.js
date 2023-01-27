@@ -4,7 +4,7 @@ const useAmountState = () => {
     const [amount, setAmount] = useState('');
 
     const onAmountChange = useCallback((event) => {
-        setAmount(event.currentTarget.value);
+        setAmount(event?.currentTarget?.value ?? '');
     }, []);
 
     return [amount, onAmountChange];
