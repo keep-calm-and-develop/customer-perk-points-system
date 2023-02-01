@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders TopNavigationBar component 1`] = `
+exports[`<TopNavigationBar/> should match snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -15,11 +15,13 @@ Object {
           Reward Points System
         </a>
         <button
+          data-testid="nav-button-customers"
           type="button"
         >
           All Customers
         </button>
         <button
+          data-testid="nav-button-new-customer"
           type="button"
         >
           New Customer
@@ -38,11 +40,13 @@ Object {
         Reward Points System
       </a>
       <button
+        data-testid="nav-button-customers"
         type="button"
       >
         All Customers
       </button>
       <button
+        data-testid="nav-button-new-customer"
         type="button"
       >
         New Customer

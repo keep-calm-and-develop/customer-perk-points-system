@@ -26,7 +26,7 @@ function TopNavigationBar() {
             <Link to="/" className="top-navigation__title">Reward Points System</Link>
             {
                 PAGES.map(({ title, route }) => (
-                    <button type="button" key={route} onClick={e => onNavigationClick(e, route)}>{title}</button>
+                    <button data-testid={`nav-button-${route.replace('/', '')}`} type="button" key={route} onClick={e => onNavigationClick(e, route)}>{title}</button>
                 ))
             }
         </div>
