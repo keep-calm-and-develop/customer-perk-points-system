@@ -40,6 +40,12 @@ To run unit tests
 npm run test
 ```
 
+To get the test coverage
+
+```sh
+npm run test --coverage --watchAll
+```
+
 ### Deployment
 
 ```sh
