@@ -111,13 +111,13 @@ Object {
                 Total Points
               </th>
               <th>
+                Feb
+              </th>
+              <th>
                 Jan
               </th>
               <th>
                 Dec
-              </th>
-              <th>
-                Nov
               </th>
               <th>
                 Transaction Action
@@ -240,13 +240,13 @@ Object {
               Total Points
             </th>
             <th>
+              Feb
+            </th>
+            <th>
               Jan
             </th>
             <th>
               Dec
-            </th>
-            <th>
-              Nov
             </th>
             <th>
               Transaction Action
