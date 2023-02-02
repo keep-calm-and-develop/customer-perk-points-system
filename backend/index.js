@@ -59,3 +59,5 @@ app.use(function(req, res){
 app.listen(PORT, () => {
     console.log(`Reward points system API Server listening on port ${PORT}`);
 });
+
+export default app;
