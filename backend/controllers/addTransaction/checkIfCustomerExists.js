@@ -13,7 +13,7 @@ const checkIfCustomerExists = async ({ req, res }) => {
     });
 
     if (!customer) {
-        res.status(API_RESPONSE_CODES.INVALID_REQUEST).send({ message: `Customer ${customerName} Not found` });
+        res.status(API_RESPONSE_CODES.INVALID_REQUEST).send({ message: `Customer ${customerName} not found` });
         return null;
     }
     return customer;
