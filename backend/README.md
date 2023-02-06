@@ -28,6 +28,13 @@ Start the server using
 npm start
 ```
 
+## Testing
+To run unit tests
+
+```sh
+npm run test
+```
+
 ## API
 Test APIs using Postman
 
